@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /*
- * Author: Nicholas Christensen					User ID: nwchrist
+ * Author: Nicholas Christensen
  * Date: 11/2/2017
  * File Name: thread.cpp
  * Program Purpose:
