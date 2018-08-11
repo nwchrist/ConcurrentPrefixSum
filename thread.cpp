@@ -4,9 +4,7 @@
 
 /*
  * Author: Nicholas Christensen					User ID: nwchrist
- * Due Date: 11/2/2017
- * Class: CS3331
- * Program Assignment #3
+ * Date: 11/2/2017
  * File Name: thread.cpp
  * Program Purpose:
  *		This file is the thread implementation for program3, 
