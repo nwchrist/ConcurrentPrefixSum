@@ -3,45 +3,4 @@
  * Date: 11/2/2017
  */
  
- 1.    There are no race conditions in this prefix sum. This is because
-	each thread saves its results into a new row of B[][], and so
-	the data that each thread is operating on is always the same.
-	We also wait for all threads in each run to exit before starting
-	the new threads for the next run, ensuring that the data for the
-	next run is always avaliable for the new threads.
-	
-2.	By definition of the prefix sum, the first value is always simply
-	copied into the end result array. Every other number is summed with
-	each other value in the array to acheive its final result. As we run 
-	through the algorithm, we combine the previous members of the array 
-	into a single int made of previous a number of previous members equal
-	to the current gap. This ensures that for a member, x[7], which would
-	normally require 7 summations, the first run will count as 1 sum, the
-	second will count as 2, and the third will count as 4. 1 + 2 + 4 = 7,
-	which is the number of summations that are required. The fact that a
-	value is copied when the index - gap of that value is < 0 is because
-	that sum has already completed its necesarry summations by the time
-	that index - gap < 0. This is shown by a member x[2]. x[2] requires
-	2 summations. For the first run there will be 1 summation worth, and
-	for the second, since the first value is copied from the start, there
-	is also 1 summation worth. During the second run gap = 2, and 2 - 2 is
-	not less than 0. This means that after run 2, x[2] would simply be copied
-	over for the rest of the program. Combining these two principles gives
-	that each index will receive the correct number of summations, with the
-	correct values, giving a correct algorithm.
-	
-3.	No, if each thread saves its results back to the same array, since we are
-	writing a concurrent program, there would be race conditions. For example,
-	if a thread x[4] writes its value back to x[4] on run 1, when x[5] runs
-	and adds x[4] + x[5] there is the possibility that x[4] will not be the
-	original correct value, and then x[5] will also be wrong.
-	
-4.	Yes, if busy waiting is allowed, we can have each thread retrieve its data
-	and perform its operation once the main program updates some flag variable
-	to indicate that it is ready to start the next step. These threads would
-	be continuously watching the flag variable once they finish their work to
-	see when they should fetch their new data and run their computations, which
-	would require CPU time, but would be a feasible solution to not having to
-	create new threads for each run.
-	
- 
+ This program takes an array of numbers and outputs the prefix sum array for those numbers.
