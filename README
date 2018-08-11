@@ -1,8 +1,6 @@
 /*
- * Author: Nicholas Christensen					User ID: nwchrist
- * Due Date: 11/2/2017
- * Class: CS3331
- * Program Assignment #3
+ * Author: Nicholas Christensen
+ * Date: 11/2/2017
  */
  
  1. There are no race conditions in this prefix sum. This is because
