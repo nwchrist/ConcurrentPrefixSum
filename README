@@ -3,7 +3,7 @@
  * Date: 11/2/2017
  */
  
- 1.     There are no race conditions in this prefix sum. This is because
+ 1.    There are no race conditions in this prefix sum. This is because
 	each thread saves its results into a new row of B[][], and so
 	the data that each thread is operating on is always the same.
 	We also wait for all threads in each run to exit before starting
