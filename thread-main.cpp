@@ -9,10 +9,8 @@
 #include "thread.h"
 
 /*
- * Author: Nicholas Christensen					User ID: nwchrist
- * Due Date: 11/2/2017
- * Class: CS3331
- * Program Assignment #3
+ * Author: Nicholas Christensen
+ * Date: 11/2/2017
  * File Name: thread-main.cpp
  * Program Purpose:
  *		This program takes an array of numbers and outputs the 
